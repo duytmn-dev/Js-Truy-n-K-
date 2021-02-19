@@ -33,4 +33,10 @@ var isFree = courses.every((array, index) => {
   console.log(index);
   return array.coin !== 0;
 });
+
+var isSome = courses.some((array, index) => {
+  console.log(index);
+  return array.coin !== 0;
+});
+
 console.log(isFree);
