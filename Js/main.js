@@ -1,16 +1,30 @@
-function Users(lastName, firstName, avatar) {
-  this.lastName = lastName;
-  this.firstName = firstName;
-  this.avatar = avatar;
-  this.getName = () => {
-    return `${firstName} ${lastName}`;
-  };
-}
-
-var author = new Users("Trần", "Tiến", "Avatar");
-var member = new Users("Nguyễn", "Trinh", "Avatar");
-
-author.title = "Chúc bạn vui vẻ !";
-member.comment = "Chuyện gì rồi cũng qua";
-console.log(author.getName());
-console.log(member.getName());
+var courses = [
+  {
+    id: 1,
+    name: "PHP",
+    coin: 100,
+  },
+  {
+    id: 2,
+    name: "JavaScript",
+    coin: 100,
+  },
+  {
+    id: 3,
+    name: "React",
+    coin: 100,
+  },
+  {
+    id: 4,
+    name: "Java",
+    coin: 100,
+  },
+  {
+    id: 5,
+    name: "C++",
+    coin: 100,
+  },
+];
+courses.forEach((valuse, index) => {
+  console.log(index, valuse);
+});
