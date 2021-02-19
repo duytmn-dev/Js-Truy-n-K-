@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
 body {
+    background-color: #fff;
     margin-top: 20%;
     text-align: center;
     font-size: 15px;
@@ -12,7 +13,7 @@ body {
     text-align: center;
     text-transform: uppercase;
     font-size: 8em;
-    color: #fff;
+    color: rgba(0, 0, 0, .75);
     letter-spacing: 0.15em;
 }
 

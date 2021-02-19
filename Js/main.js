@@ -12,12 +12,12 @@ var courses = [
   {
     id: 3,
     name: "React",
-    coin: 100,
+    coin: 0,
   },
   {
     id: 4,
     name: "Java",
-    coin: 100,
+    coin: 0,
   },
   {
     id: 5,
@@ -28,3 +28,9 @@ var courses = [
 courses.forEach((valuse, index) => {
   console.log(index, valuse);
 });
+
+var isFree = courses.every((array, index) => {
+  console.log(index);
+  return array.coin !== 0;
+});
+console.log(isFree);
