@@ -101,4 +101,10 @@ var htmls = topicArray.map((value) => {
   `;
 });
 
-console.log(htmls.join(""));
+// includes method tồn tại trong Array và String
+/**
+ includes giống như search với 2 tham số => boolean:
+ 1 giá trị cần tìm
+ 2 vị trí bắt đầu 
+ */
+console.log(String.prototype.includes);
