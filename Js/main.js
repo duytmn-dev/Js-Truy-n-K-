@@ -117,6 +117,15 @@ var arrayTest = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 //   return element % 2;
 // });
 
+Array.prototype.forEach2 = function (callback) {
+  var arraylength = this.length;
+  for (let i = 0; i < arraylength; i++) {
+    callback(this[i]);
+  }
+};
+
+arrayTest.forEach2((element) => console.log(element));
+
 Array.prototype.filter2 = function (callback) {
   var output = [];
   for (const i in this) {
