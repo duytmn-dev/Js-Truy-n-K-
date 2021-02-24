@@ -107,4 +107,28 @@ var htmls = topicArray.map((value) => {
  1 giá trị cần tìm
  2 vị trí bắt đầu 
  */
-console.log(String.prototype.includes);
+
+// Callback
+// forEach, reduce, find, filter:
+
+var arrayTest = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// var html = arrayTest.filter((element) => {
+//   return element % 2;
+// });
+
+Array.prototype.filter2 = function (callback) {
+  var output = [];
+  for (var i in this) {
+    var result = callback(this[i], i);
+    if (result) {
+      output.push(this[i]);
+    }
+  }
+  return output;
+};
+
+var html = arrayTest.filter2((element) => {
+  return element % 3 == 0;
+});
+console.log(html);
