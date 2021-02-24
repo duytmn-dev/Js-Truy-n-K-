@@ -119,16 +119,18 @@ var arrayTest = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 Array.prototype.filter2 = function (callback) {
   var output = [];
-  for (var i in this) {
-    var result = callback(this[i], i);
-    if (result) {
-      output.push(this[i]);
+  for (const i in this) {
+    if (Object.hasOwnProperty.call(this, i)) {
+      const element = callback(this[i], i);
+      if (element) {
+        output.push(this[i]);
+      }
     }
   }
   return output;
 };
 
-var html = arrayTest.filter2((element) => {
+var htmlFilter = arrayTest.filter2((element) => {
   return element % 3 == 0;
 });
-console.log(html);
+// console.log(htmlFilter);
