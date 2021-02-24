@@ -25,18 +25,80 @@ var courses = [
     coin: 100,
   },
 ];
-courses.forEach((valuse, index) => {
-  console.log(index, valuse);
+courses.forEach((value, index) => {
+  // console.log(index, value);
 });
 
 var isFree = courses.every((array, index) => {
-  console.log(index);
+  // console.log(index);
   return array.coin !== 0;
 });
 
 var isSome = courses.some((array, index) => {
-  console.log(index);
+  // console.log(index);
   return array.coin !== 0;
 });
 
-console.log(isFree);
+var newCourses = courses.map((value) => {
+  return {
+    id: value.id,
+    name: `Khóa học ${value.name}`,
+    coin: value.coin,
+    price: `Giá tiền ${value.coin}`,
+  };
+});
+// x là giá trị Total. Còn y là giá trị kế tiếp
+var totalCoin = courses.reduce((x, y) => {
+  return x + y.coin;
+}, 0);
+
+// Flat - "Làm phẳng mảng"
+var deptArray = [1, [2, 3], 4, 5, [6, 7, 8], 9];
+var flatArray = deptArray.reduce((flat, deptItem) => {
+  return flat.concat(deptItem);
+}, []);
+// Lấy các khóa học
+var topics = [
+  {
+    topic: "Front-end",
+    courses: [
+      {
+        id: 1,
+        title: "Html, Css",
+      },
+      {
+        id: 2,
+        title: "JavaScript",
+      },
+    ],
+  },
+
+  {
+    topic: "Back-end",
+    courses: [
+      {
+        id: 1,
+        title: "ReactJS",
+      },
+      {
+        id: 2,
+        title: "Angular",
+      },
+    ],
+  },
+];
+// Lấy Title
+var topicArray = topics.reduce((flat, item) => {
+  return flat.concat(item.courses);
+}, []);
+
+var htmls = topicArray.map((value) => {
+  return `
+  <div>
+  <h2>topic: ${value.title} </h2>
+  <p> ID: ${value.id}</p>
+  </div>
+  `;
+});
+
+console.log(htmls.join(""));
